@@ -13,14 +13,15 @@ def roman_to_int(roman_string):
             "D":500,
             "M":1000
             }
-    value = 0
     total = 0
-    for a in reversed(roman_string):
-        val = roman_numerals.get(a, 0)
-        if val < value:
-            total -= val
-        else:
-            total += val
-        value = val
+    a = 0
 
-    return total
+    while a < len(roman_string):
+        if a + 1 < len(roman_string) and roman_digits[roman_string[a]] < roman_digits[roman_string[a + 1]]:
+            total += roman_digits[roman_string[a + 1]] - roman_digits[roman_string[a]]
+            a += 2
+        else:
+            total += roman_digits[roman_string[a]]
+            a += 1
+
+    return (total)

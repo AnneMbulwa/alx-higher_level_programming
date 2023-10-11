@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 def complex_delete(a_dictionary, value):
-    for a in list(a_dictionary.keys()):
-        if a_dictionary[a] is value:
-            del a_dictionary[a]
+    delete_key = []
+
+    for key, a in a_dictionary.keys():
+        if a is value:
+            delete_key.append(key)
+    for key in delete_key:
+        del a_dictionary[key]
     return (a_dictionary)

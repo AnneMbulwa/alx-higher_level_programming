@@ -5,8 +5,6 @@ def list_division(my_list_1, my_list_2, list_length):
 
     for a in range(0, list_length):
         try:
-            if a >= len(my_list_1) or a >= len(my_list_2):
-                raise IndexError("out of range")
             results = my_list_1[a] / my_list_2[a]
         except ZeroDivisionError:
             results = 0
@@ -17,5 +15,7 @@ def list_division(my_list_1, my_list_2, list_length):
         except IndexError:
             results = 0
             print("out of range")
+        finally:
+            pass
         new_store.append(results)
-    return new_store
+    return new_storie

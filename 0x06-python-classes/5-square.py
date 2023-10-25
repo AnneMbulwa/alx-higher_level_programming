@@ -3,7 +3,7 @@
 
 
 class Square:
-    """class body"""
+    """class square body"""
 
     def __init__(self, size):
         """

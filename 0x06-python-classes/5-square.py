@@ -5,7 +5,7 @@
 class Square:
     """class body"""
 
-    def __init__(self, size=0):
+    def __init__(self, size):
         """
         Args:
         size(int): size must be int for new square
@@ -14,6 +14,7 @@ class Square:
 
     @property
     def size(self):
+        """retrives size of current square"""
         return (self.__size)
 
     @size.setter
@@ -25,9 +26,11 @@ class Square:
         self.__size = value
 
     def area(self):
+        """ returns the current square area"""
         return (self.__size ** 2)
 
     def my_print(self):
+        """prints in stdout the square with the character #"""
         for a in range(0, self.__size):
             [print("#", end="")for b in range(self.__size)]
             print("")

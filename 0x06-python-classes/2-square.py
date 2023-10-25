@@ -9,7 +9,7 @@ class Square:
     def __init__(self, size=0):
         """
         Args:
-            size must be a int
+            size(int): new square size
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")

@@ -1,7 +1,16 @@
 #!/usr/bin/python3
+"""create a class square"""
+
+
 class Square:
+    """class square body"""
+
     def __init__(self, size=0):
-        self.__size = size
+        """
+        Args:
+        size(int): new square size
+        """
+        self.size = size
 
     @property
     def size(self):

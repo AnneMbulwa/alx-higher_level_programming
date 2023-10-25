@@ -9,6 +9,7 @@ class Square:
         """
         Args: size must be a int
         """
+
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:

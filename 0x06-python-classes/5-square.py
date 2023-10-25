@@ -6,7 +6,11 @@ class Square:
     """class body"""
 
     def __init__(self, size=0):
-        self.__size = size
+        """
+        Args:
+        size(int): size must be int for new square
+        """
+        self.size = size
 
     @property
     def size(self):

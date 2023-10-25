@@ -1,12 +1,19 @@
 #!/usr/bin/python3
+
+"""create a class square"""
+
+
 class Square:
+    """class square body"""
+
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
-        return self.__size
+        """retrieves the size of current square"""
+        return (self.__size)
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
@@ -17,7 +24,8 @@ class Square:
 
     @property
     def position(self):
-        return self.__position
+        """retrieves current position"""
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -25,10 +33,10 @@ class Square:
                 len(value) != 2 or
                 not (all isinstance(a, int) and a >= 0 for a in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__postion = value
+        self.__position = value
 
     def area(self):
-        return self.__size ** 2
+        return (self.__size ** 2)
 
     def my_print(self):
         if self.__size == 0:

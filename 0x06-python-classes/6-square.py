@@ -7,6 +7,11 @@ class Square:
     """class square body"""
 
     def __init__(self, size=0, position=(0, 0)):
+        """
+        Args:
+            size(int): new square size
+            position(int, int): new position
+        """
         self.size = size
         self.position = position
 
@@ -36,12 +41,13 @@ class Square:
         self.__position = value
 
     def area(self):
-        return (self.__size ** 2)
+        return (self.__size * self.__size)
 
     def my_print(self):
         if self.__size == 0:
             print("")
             return
+
         [print("") for a in range(0, self.__position)]
         for a in range(0, self.__size):
             [print(" ", end="") for x in range(0, self.__poosition[0])]

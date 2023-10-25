@@ -31,7 +31,7 @@ class Square:
 
     def area(self):
         """Returns area of cuurent square"""
-        return self.__size * self.__size
+        return (self.__size * self.__size)
 
     def __le__(self, other):
         """Defines the <=(less or equal to) comparison"""

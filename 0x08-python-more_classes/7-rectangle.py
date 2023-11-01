@@ -3,7 +3,11 @@
 
 
 class Rectangle:
-    """class body"""
+    """class body
+    Attributes:
+       number_of_instances(int): number of instances
+       print_symbol(char): prints the symbol # 
+    """
 
     number_of_instances = 0
     print_symbol = "#"

@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
-"""craeting a class rectangle"""
+"""creating a class rectangle"""
 
 
 class Rectangle:

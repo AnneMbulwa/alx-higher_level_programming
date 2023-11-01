@@ -3,7 +3,11 @@
 
 
 class Rectangle:
-    """class body"""
+    """class body
+    Attributes:
+        number_of_instances(int): represents number of instance in rectangle
+        print_symbol(char/str): prints the reprentable character
+    """
 
     number_of_instances = 0
     print_symbol = "#"
@@ -54,13 +58,32 @@ class Rectangle:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
+    @static.method
+    def bigger_or_equal(rect_1, rect_2):
+        """returns the biggest rectangle based on the area
+        Args:
+            rect_1: represents rectangle one
+            rect_2: represents rectangle two
+        Error:
+            TypeError. if both rectangles are not instances of Rectangle
+        """
+
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return (rect_1)
+        return (rect_2)
+
     def __str__(self):
         """print() and str() should print the rectangle with the character #:"""
         if self.__width == 0 or self.__height == 0:
             return ("")
+
         rec = []
         for a in range(self.__height):
-            [rec.append('#') for j in range(self.__width)]
+            [rec.append(str(self.print_symbol)) for j in range(self.__width)]
             if a != self.__height - 1:
                 rec.append("\n")
         return ("".join(rec))

@@ -6,11 +6,13 @@ Returns an integer: the addition of a and b
 
 
 def add_integer(a, b=98):
-    if not instance(a, (int, float)):
+    """returns the addition of two integers
+    Raises:
+        TypeErrors(a or b must be integers
+    """
+    if type(a) not (int, float):
         raise TypeError("a must be an integer")
-    if not instance(b, (int, float)):
+    if type(b) not (int, float):
         raise TypeError("b must be an integer")
     
     return int(a) + int(b)
-if __name__ == "__main__":
-    doctest.testfile("tests/0-add_integer.txt")

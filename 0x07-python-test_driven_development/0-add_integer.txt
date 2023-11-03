@@ -1,11 +1,13 @@
-----
-using 0-add_integer.py
-----
+===========================
+How to use 0-add_integer.py
+============================
 
 module that adds two integers using the function:
 def add_integer(a, b=98):
 
----usage---
+===========================
+	usage
+============================
 
 returns the addition of two integers with the operator '+'
 

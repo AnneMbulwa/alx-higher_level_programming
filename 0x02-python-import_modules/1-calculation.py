@@ -15,4 +15,4 @@ if __name__ == "__main__":
                 results = mul(a, b)
             if operators[a] == "/":
                 results = div(a, b)
-            print("{} {} {} = {}".format(a, operators[a], b, results))
+            print("{0} {1} {2} = {3}".format(a, operators[a], b, results))

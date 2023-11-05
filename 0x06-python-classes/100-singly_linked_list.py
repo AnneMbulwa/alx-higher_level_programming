@@ -44,7 +44,7 @@ class SinglyLinkedList:
         """
         add = None(value)
         if self.__head is None:
-            self.__head = add
+            self.__head = None
         elif self.__head.data > value:
             add.next_node = self.__head
             self.__head = add
@@ -59,8 +59,8 @@ class SinglyLinkedList:
     def __str__(self):
         """print() representation of singlylinkedlist"""
         results = []
-        temp = self.head
-        while temp:
+        temp = self.__head
+        while temp is not None:
             results.append(str(temp.data))
             temp = temp.next_node
-            return ("\n").join(results)
+            return ("\n".join(results))

@@ -87,7 +87,7 @@ class Rectangle:
         return (cls(size, size))
 
     def __str__(self):
-        """print() and str() should print the rectangle with the character #:"""
+        """print() and str() should print the rectangle with the char #:"""
         if self.__width == 0 or self.__height == 0:
             return ("")
 

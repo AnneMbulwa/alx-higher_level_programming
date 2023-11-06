@@ -7,6 +7,14 @@ otherwise False.
 
 
 def is_same_class(obj, a_class):
+    """Args
+        obj(any):
+        a_class(type):
+
+    Return:
+        True
+        False
+    """
     if type(obj) == a_class:
         return True
     else:

@@ -8,6 +8,14 @@ otherwise False.
 
 
 def is_kind_of_class(obj, a_class):
+    """Args
+        obj(any):
+        a_class(type):
+
+    Return.
+        True
+        False
+    """
     if isinstance(obj, a_class):
         return True
     else:

@@ -1,0 +1,44 @@
+How to use ..
+
+case: 1
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)                                                               >>> my_list.append(2)                                                               >>> my_list.append(3)                                                               >>> my_list.append(5)                                                               >>> print(my_list)                                                                  [1, 4, 2, 3, 5]                                                                     >>> my_list.print_sorted()                                                          [1, 2, 3, 4, 5]
+>>> print(my_list)                                                                  [1, 4, 2, 3, 5]                                                                     >>>
+
+case :2
+>>> MyList = __import__('1-my_list').MyList                                         >>> my_list1.print_sorted()                                                         Traceback (most recent call last):                                                    File "<stdin>", line 1, in <module>                                               NameError: name 'my_list1' is not defined. Did you mean: 'my_list'?
+>>>                                                                                 >>>
+
+case :3
+>>> a = [23, 12, 89, 34, 3]
+>>> my_list = Mylist(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Mylist' is not defined. Did you mean: 'MyList'?
+
+case :4
+>>> a = [23, 12, 89, 34, 3]
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[3, 12, 23, 34, 89]
+
+case :5
+>>> b = []
+>>> my_list = MyList(b)
+>>> my_list.print_sorted()
+[]
+
+case :5
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(12)
+>>> my_list.append(-67)
+>>> my_list.append(32)
+>>> my_list.append(-97)
+>>> my_list.append(82)
+>>> my_list.append(-7)
+>>> my_list.append(-87)
+>>> my_list.print_sorted()
+[-97, -87, -67, -7, 12, 32, 82]

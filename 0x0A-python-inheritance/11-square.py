@@ -22,4 +22,4 @@ class Square(Rectangle):
         """print() should print, and str() should return
         the square description: [Square] <width>/<height>
         """
-        return str("[square] {}/{}".format(self.__size, self.__size))
+        return str("[Square] {}/{}".format(self.__size, self.__size))

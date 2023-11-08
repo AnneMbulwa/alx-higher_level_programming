@@ -4,5 +4,10 @@ import json
 
 
 def to_json_string(my_obj):
-    x = json.dumps(my_obj)
-    return x
+    """
+    Args:
+        my_obj(obj):
+    Return
+        json format of the object
+    """
+    return json.dumps(my_obj)

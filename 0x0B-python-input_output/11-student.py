@@ -33,6 +33,7 @@ class Student:
         else:
             return {ke: getattr(self, ke)
                     for ke in attrs if hasattr(self, ke)}
+
     def reload_from_json(self, json):
         """
         Args:

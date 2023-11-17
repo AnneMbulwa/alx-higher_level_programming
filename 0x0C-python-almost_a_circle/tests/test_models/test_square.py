@@ -2,8 +2,8 @@
 """Unittest for class square"""
 
 import unittest
-import io
-import contextlib
+from io import StringIO
+from contextlib import redirect_stdout
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -16,8 +16,9 @@ class TestSquare(unittest.TestCase):
     def test_all_attributes_given(self):
         """tests if all attributes are provided"""
         s0 = (4, 5, 3, 2)
-        self.assertTrue(s0.height == 4)"""height == width == size"""
+        """height == width == size"""
         self.assertTrue(s0.width == 4)
+        self.assertTrue(s0.height == 4)
         self.assertTrue(s0.size == 4)
         self.assertTrue(s0.x == 5)
         self.assertTrue(s0.y == 3)
@@ -26,7 +27,7 @@ class TestSquare(unittest.TestCase):
     def test_not_all_attributes_given(self):
         """tests if all attributes are not provided"""
         s1 = (6, 8)
-        self.asserTrue(s1.height = s1.width = s1.size == 6)
+        self.assertTrue(s1.width == s1.height == s1.size == 6)
         self.assertTrue(s1.x == 8)
         self.assertTrue(s1.y == 0)
         self.assertTrue(si.id is not None)
@@ -104,23 +105,22 @@ class TestSquare(unittest.TestCase):
     def test_updates(self):
         """updates of *args"""
         s3 = Square(45, 20, 5, 77)
-        s3.update(34, 23, 6, 4)
-        self.assertEqual(str(s3), '[Square] (4) 23/6 - 34')
+        s3.update(10, 10, 10, 10)
+        self.assertEqual(str(s3), '[Square] (10) 10/10 - 10')
         s3.update(99)
-        self.assertEqual(str(s3), '[Square] (99) 23/6 - 34')
-        s3.update(89, 10)
-        self.assertEqual(str(s3), '[Square] (89) 23/6 - 10')
+        self.assertEqual(str(s3), '[Square] (99) 10/10 - 10')
+        s3.update(99, 5)
+        self.assertEqual(str(s3), '[Square] (99) 10/10 - 5')
 
         """udates of **kwargs"""
-        s3 = Square(10, 10, 10, 10)
         s3.update(id=2, size=5, nize=6)
-        self.assertEqual(str(s3), '[Square] (2) 10/10 - 5')
+        self.assertEqual(str(s3), '[Square] (2) 20/5 - 5')
 
     def test_to_dictionary(self):
         """tests the method: to_dictionary"""
         sdict = Square(4, 6, 8, 10).to_dictionary()
         self.assertEqual(type(sdict), dict)
-        s2 = Square(5, 5)
+        s2 = Square(1, 1)
         s2.update(**sdict)
         self.assertEqual(str(s2), '[Square] (10) 6/8 - 4')
 

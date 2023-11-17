@@ -8,7 +8,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
-class TestBase(unittest.Testcase):
+class TestBase(unittest.TestCase):
     """testing the base class"""
 
     def setUp(self):
@@ -75,7 +75,7 @@ class TestBase_to_json_string(unittest.TestCase):
     def test_to_json_string(self):
         r1 = [{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5}]
         r2 = [{"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}]
-        lists_d = [r1.to_dictionary(), r2.to_dictionary()]
+        lists_d = (r1.to_dictionary(), r2.to_dictionary())
         self.assertTrue(len(Base.to_json_string(lists_d)))
 
     def test_to_json_string_empty_list(self):

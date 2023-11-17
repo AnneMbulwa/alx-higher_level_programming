@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-import io
+
+from io import StringIO
+from contextlib import redirect_stdout
 import sys
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 
 
-class TestRectangle(unittest.Testcase):
+class TestRectangle(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
 
@@ -106,7 +108,7 @@ class TestRectangle(unittest.Testcase):
         with StringIO() as f, redirect_stdout(f):
             Rectangle(3, 5, 4, 1).display()
             b = f.getvalue()
-            self.assertEqual(b, '\n\n ##\n ##\n ##\n')
+            self.assertEqual(b, '\n\n ###\n ###\n ###\n')
 
     def test_print(self):
         """print __str__ test method"""
@@ -119,7 +121,7 @@ class TestRectangle(unittest.Testcase):
         r1.update(89)
         self.assertEqual(str(r1), '[Rectangle] (89) 10/10 - 10/10')
         r1.update(89, 2)
-        self.assertEqusl(str(r1), '[Rectangle] (89) 10/10 - 2/10')
+        self.assertEqual(str(r1), '[Rectangle] (89) 10/10 - 2/10')
         r1.update(89, 2, 5)
         self.assertEqual(str(r1), '[Rectangle] (89) 10/10 - 2/5')
         r1.update(89, 2, 5, 7, 9)
@@ -127,9 +129,9 @@ class TestRectangle(unittest.Testcase):
 
         """updates in *args error raises"""
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r.update(99, 1, 2, 3, "stg")
+            r1.update(99, 1, 2, 3, "stg")
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-            r.update(99, 1, 2, 3, -9)
+            r1.update(99, 1, 2, 3, -9)
 
         """update **kwargs"""
         r1.update(id=99)

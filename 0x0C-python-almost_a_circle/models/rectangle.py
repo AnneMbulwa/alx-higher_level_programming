@@ -2,6 +2,7 @@
 """class Rectangle that inherits from Base"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """class rectangle body"""
 
@@ -91,7 +92,7 @@ class Rectangle(Base):
         """print and display the # character"""
         if self.width == 0 or self.height == 0:
             print("")
-            return;
+            return
 
         [print("") for a in range(self.y)]
         for q in range(self.height):
@@ -142,5 +143,5 @@ class Rectangle(Base):
             })
 
     def __str__(self):
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
-                                                      self.width, self.height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.x, self.y, self.width, self.height))

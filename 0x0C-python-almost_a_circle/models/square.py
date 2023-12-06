@@ -2,6 +2,7 @@
 """create a xlass square tha inherits from class rectangle"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """class square body.
     Args:
@@ -23,7 +24,25 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        if args and len(args) != 0:
+        """
+    Update the attributes of the Square instance.
+
+    Args:
+        *args: Variable number of arguments.
+            If provided, should contain in order:
+            1. id
+            2. size (width and height)
+            3. x coordinate
+            4. y coordinate
+
+        **kwargs: Arbitrary keyword arguments.
+            Can include 'id', 'width', 'height', 'x', or 'y' to
+            update specific attributes.
+
+    Returns:
+        None
+    """
+        if args:
             for k, m in enumerate(args):
                 if k == 0:
                     self.id = m
@@ -35,7 +54,7 @@ class Square(Rectangle):
                 else:
                     self.y = m
         else:
-            if kwargs and len(kwargs) != 0:
+            if kwargs:
                 for w, n in kwargs.items():
                     if w == "id":
                         if n is None:
@@ -60,5 +79,5 @@ class Square(Rectangle):
                 }
 
     def __str__(self):
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
-                                                  self.width))
+        return ("[Square] ({}) {}/{} - {}"
+                .format(self.id, self.x, self.y, self.width))

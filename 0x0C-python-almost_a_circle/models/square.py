@@ -11,10 +11,22 @@ class Square(Rectangle):
     The width and height must be assigned to the value of size
     """
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        Initialize a Square instance.
+
+        Args:
+            size (int): The size of the square.
+            x (int): X coordinate (default is 0).
+            y (int): Y coordinate (default is 0).
+            id (int): Identifier (default is None).
+        """
         super().__init__(id, x, y, size, size)
 
     @property
     def size(self):
+        """
+        retrieves the current size
+        """
         return self.width
 
     @size.setter

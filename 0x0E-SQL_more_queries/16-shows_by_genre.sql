@@ -1,6 +1,6 @@
---script lists all shows,all genres linked to that show,from  hbtn_0d_tvshows
---if no genre display null
---display: tv_shows.title - tv_genres.name
+-- Lists all shows,all genres linked to that show,from  hbtn_0d_tvshows
+-- If no genre display null
+-- Display: tv_shows.title - tv_genres.name
 USE hbtn_0d_tvshows;
 SELECT tv_shows.title, tv_genres.name
 FROM tv_shows LEFT JOIN tv_show_genres

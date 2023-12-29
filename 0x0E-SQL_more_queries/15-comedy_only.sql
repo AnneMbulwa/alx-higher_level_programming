@@ -1,6 +1,6 @@
---script that lists all Comedy shows in the database hbtn_0d_tvshows
---The tv_genres table contains only one record where name = Comedy
---display: tv_shows.title
+-- Lists all 6Comedy shows in the database hbtn_0d_tvshows
+-- The tv_genres table contains only one record where name = Comedy
+-- Display: tv_shows.title
 SELECT title
 FROM tv_shows
 INNER JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id

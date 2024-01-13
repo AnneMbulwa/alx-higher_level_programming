@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """
 displays all values in the states table of hbtn_0e_0_usa where
-name matches the argument."""
+name matches the argument having a safe from MySQL injections!."""
 
 if __name__ == "__main__":
-
-    import MySQLdb
-    import sys
+    import MySQLdb                                                                      import sys
 
     db = MySQLdb.connect(
             host="localhost",
@@ -18,11 +16,10 @@ if __name__ == "__main__":
 
     conn = db.cursor()
     conn.execute(
-            "SELECT * FROM states WHERE name = '{}' ORDER BY state.id"
-            .format(sys.argv[4]))
+            "SELECT * FROM states WHERE name = %s ORDER BY state.id",
+            (sys.argv[4]))
     rows = conn.fetchall()
     for row in rows:
-        print(row)
-
+        print(row)                                                                  
     conn.close()
     db.close()

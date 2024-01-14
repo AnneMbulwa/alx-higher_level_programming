@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """prints the first State object from the database hbtn_0e_6_usa"""
 
-import sys
+from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     one = session.query(State).order_by(State_id).first()
 
     if one:
-        print ("{}: {}".format(one.id, one.name))
+        print("{}: {}".format(one.id, one.name))
     else:
         print("Nothing")
 

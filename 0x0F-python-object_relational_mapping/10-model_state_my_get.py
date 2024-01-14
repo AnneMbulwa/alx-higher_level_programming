@@ -2,7 +2,7 @@
 """prints the State object with the name passed as
 argument from the database hbtn_0e_6_usa"""
 
-import sys
+from sys import argv
 from sqlalchemy.orm import session
 from sqlalchemy import create_engine
 from model_state import Base, State

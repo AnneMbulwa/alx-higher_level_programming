@@ -1,7 +1,7 @@
 #!/usr/bin/pyhton3
 """lists all State objects that contain letter a from database hbtn_0e_6_us"""
 
-import sys
+from sys import argv
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from model_state import Base, State
@@ -15,9 +15,10 @@ if __name__ == "__main__":
     Session = session(bind=engine)
     session = Session()
 
-    first = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+    first = session.query(State).filter(State.name.like('%a%')) \
+            .order_by(State.id)
 
     for row in first:
-        print ("{}: {}".format(first.id, first.name))
+        print("{}: {}".format(first.id, first.name))
 
     session.close()

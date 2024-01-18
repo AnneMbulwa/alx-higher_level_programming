@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     username, password, database = argv[1], argv[2], argv[3]
 
-    db = MySQL.connect(
+    db = MySQLdb.connect(
             host="localhost",
             user="username",
             passwd="password",

@@ -5,6 +5,10 @@
 
 
 def find_peak(list_of_integers):
+    """
+    Args:
+        list_of_integers(int): list contains integers"""
+
     if not list_of_integers:
         return None
     list_of_integers.sort()

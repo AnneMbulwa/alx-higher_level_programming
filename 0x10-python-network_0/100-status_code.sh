@@ -1,5 +1,3 @@
 #!/bin/bash
-# using curl to send a request to a URL passed as an argument,
-# and displays only the status code of the response.
-
+# using curl to send request to URL passed as argument and display status code
 curl -s -o /dev/null -w "%{http_code}" "$1"

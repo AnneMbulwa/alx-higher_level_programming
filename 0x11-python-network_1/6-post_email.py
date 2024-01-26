@@ -3,6 +3,7 @@
 the passed URL with the email as a parameter
 using requests"""
 import requests
+from sys import argv
 
 
 if __name__ == "__main__":

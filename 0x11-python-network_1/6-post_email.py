@@ -9,4 +9,4 @@ from sys import argv
 if __name__ == "__main__":
     email = {'email': argv[2]}
     response = requests.post(argv[1], data=email)
-    print(reaponse.text)
+    print(response.text)
